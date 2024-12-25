@@ -4,8 +4,11 @@
 Hedapen edo gehigarri honek [Batuz](https://batuz.eus/) webgunean funtzionalitate berriak gehitzeko eginda dago.
 Oraigoz kontzeptu froga bat da.
 Bi botoi gehizen ditu igorritako faktura zerrendatren gainean:
+![Batuz +](screenshots/screenshot1.png)
 * **CSV** botoia: faktura zerrenda CSV formatuan deskargatzeko.
 * **Estatisitikak** botoia: Bi grafika erakusten ditu, bata hilez hile fakturaturiko kopuruarekin eta beztea bezeroaren arabera.
+
+![Batuz + Estatistikak](screenshots/screenshot2.png)
 
 ## Instalazio Instrukzioak
 
