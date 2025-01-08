@@ -25,16 +25,29 @@ function exportToCSV(data) {
 
 function buildFiltro(idPersona) {
     const currentYear = new Date().getFullYear();
-    const filtro = {
+    let filtro = {
         idntPersonaObligado: idPersona,
-        fechaEmisionDesde: `${currentYear}-01-01`,
-        fechaEmisionHasta: null,
+        fechaEmisionDesde: buildFecha('fechaDesde'),
+        fechaEmisionHasta: buildFecha('fechaHasta'),
         diezUltimas: false,
         fechaUltimaActualizacionDesde: null,
         fechaUltimaActualizacionHasta: null,
-        estadoRegistro: "E"
+        numDocumento: document.querySelector('[name=numDocumento]').value,
+        estadoRegistro: document.querySelector('[name=estadoRegistro]').value
     };
+    if(document.querySelector('[name=serieFac]').value) {
+        filtro.serieFactura = document.querySelector('[name=serieFac]').value;
+    }
     return encodeURIComponent(JSON.stringify(filtro));
+}
+
+function buildFecha(type) {
+    source = document.querySelector(`input[name=${type}]`).value;
+    if (!source) {
+        return null;
+    }
+    const [day, month, year] = source.split("/");
+    return `${year}-${month}-${day}`;
 }
 
 function waitForElement(selector, callback) {
